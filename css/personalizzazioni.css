@@ -8,9 +8,10 @@
    ============================================================= */
 
 :root {
-  --brand:        #2F4858;  /* colore principale — titoli, pulsanti, fondo scuro */
-  --brand-scuro:  #22333E;  /* stessa tinta più cupa — pulsante premuto, footer */
+  --brand:        #0E3653;  /* blu del logo Nuova 2B — titoli, pulsanti, fondo scuro */
+  --brand-scuro:  #0A2840;  /* stessa tinta più cupa — pulsante premuto, footer */
   --accento:      #C9821E;  /* colore di richiamo — numeri, evidenziazioni */
+  --grigio-logo:  #8B8B8C;  /* il grigio del triangolo, se serve */
 
   /* Neutri: di solito non si toccano */
   --testo:        #23272B;
@@ -69,10 +70,27 @@ a:hover { color: var(--brand-scuro); }
 .navbar-sito {
   background: #fff;
   border-bottom: 1px solid var(--bordo);
-  padding-top: .35rem;
-  padding-bottom: .35rem;
+  padding-top: .9rem;
+  padding-bottom: .9rem;
 }
 .navbar-sito .navbar-brand { line-height: 1.2; }
+
+/* Il nome resta testo HTML; il triangolo del logo gli sta dietro */
+.logo-marchio {
+  position: relative;
+  display: inline-block;
+  padding: .55rem 1.4rem .15rem 2.6rem;
+}
+.logo-marchio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../img/logo-triangolo.png") no-repeat left center;
+  background-size: contain;
+  z-index: 0;
+}
+.logo-marchio .marchio { position: relative; z-index: 1; }
+
 .navbar-sito .marchio {
   font-size: 3.35rem;
   font-weight: 700;
@@ -90,6 +108,7 @@ a:hover { color: var(--brand-scuro); }
 @media (max-width: 575.98px) {
   .navbar-sito .marchio { font-size: 2.2rem; }
   .navbar-sito .navbar-brand small { font-size: .7rem; }
+  .logo-marchio { padding: .4rem .9rem .1rem 1.7rem; }
 }
 .navbar-sito .nav-link { color: var(--testo); }
 .navbar-sito .nav-link:hover { color: var(--brand); }
