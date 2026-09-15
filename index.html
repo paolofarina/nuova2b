@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ATTENZIONE — DA TOGLIERE AL LANCIO VERO:
+     questa riga dice a Google di NON indicizzare la pagina.
+     Serve finché è solo un'anteprima di lavoro. -->
+<meta name="robots" content="noindex, nofollow">
+
+<title>Consulenza tecnica all'acquisto di casa — Nuova 2B | Ariccia, Castelli Romani e Roma</title>
+<meta name="description" content="Prima di comprare casa, falla vedere a chi le case le rimette a posto. Sopralluogo tecnico, computo dei lavori e verifica di conformità ad Ariccia, nei Castelli Romani e a Roma.">
+
+<!-- Bootstrap 5.3 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Icone -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Colori e ritocchi: QUESTO è il file da toccare quando arrivano i colori aziendali -->
+<link href="css/personalizzazioni.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ============================================================
+     BARRA CONTATTI
+     ============================================================ -->
+<div class="barra-top py-2 d-none d-lg-block">
+  <div class="container d-flex justify-content-between align-items-center small">
+    <span><i class="bi bi-geo-alt me-1"></i>Ariccia (RM) — Castelli Romani, Roma e provincia</span>
+    <span>
+      <a href="tel:+393937588998" class="me-3"><i class="bi bi-telephone me-1"></i>393 758 8998</a>
+      <a href="mailto:nuova.2bcostruzioni@gmail.com"><i class="bi bi-envelope me-1"></i>nuova.2bcostruzioni@gmail.com</a>
+    </span>
+  </div>
+</div>
+
+<!-- ============================================================
+     NAVIGAZIONE
+     ============================================================ -->
+<nav class="navbar navbar-expand-lg sticky-top navbar-sito">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <span class="marchio">Nuova 2B</span>
+      <small class="d-block">Consulenza tecnica all'acquisto</small>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#perche">Perché</a></li>
+        <li class="nav-item"><a class="nav-link" href="#situazioni">Da chi compri</a></li>
+        <li class="nav-item"><a class="nav-link" href="#servizi">Servizi</a></li>
+        <li class="nav-item"><a class="nav-link" href="#come-funziona">Come funziona</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contatti">Contatti</a></li>
+        <li class="nav-item ms-lg-3"><a class="btn btn-brand" href="#contatti">Prenota una chiamata</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     APERTURA — titolo + modulo
+     ============================================================ -->
+<header id="apertura" class="sezione-apertura py-5">
+  <div class="container">
+
+    <!-- IMMAGINE PRINCIPALE — prima riga del container -->
+    <figure class="immagine-principale mb-5">
+      <img src="img/ristrutturazione.jpg"
+           alt="La stessa coppia in due stanze: a sinistra una casa ristrutturata e luminosa, a destra la stessa stanza con crepe, muffa e calcinacci"
+           class="img-fluid w-100">
+      <figcaption>
+        <div class="row text-center">
+          <div class="col-6"><span class="didascalia">La casa che hai in mente</span></div>
+          <div class="col-6"><span class="didascalia didascalia-scura">Quella che rischi di comprare</span></div>
+        </div>
+      </figcaption>
+    </figure>
+
+    <div class="row g-5 align-items-center">
+
+      <div class="col-lg-7">
+        <p class="domanda-apertura">Stai comprando casa? Sei sicuro che non ci siano sorprese?</p>
+        <h1 class="titolo-apertura">Falla vedere a chi le case le rimette a posto</h1>
+        <p class="lead">
+          Un'impresa di ristrutturazioni dalla tua parte al sopralluogo: ti dice cosa c'è che non va
+          e quanto costa davvero rimetterla a posto — prima che tu firmi.
+        </p>
+        <p class="zona"><i class="bi bi-geo-alt me-1"></i>Ariccia, Castelli Romani, Roma e provincia.</p>
+        <a href="#come-funziona" class="btn btn-brand btn-lg">Vedi come funziona</a>
+        <a href="tel:+393937588998" class="btn btn-link btn-lg">oppure chiama il 393 758 8998</a>
+      </div>
+
+      <div class="col-lg-5">
+        <!-- MODULO: oggi non invia nulla. Va collegato a Formspree o allo script dell'hosting. -->
+        <!-- Su mobile il box parte socchiuso: si tocca e si apre. Su desktop è sempre aperto. -->
+        <div class="card modulo-contatto socchiuso" id="box-modulo">
+          <div class="card-body">
+            <h2 class="h4 mb-3 intestazione-modulo" role="button" tabindex="0"
+                aria-controls="box-modulo" aria-expanded="false">
+              Prenota una chiamata
+              <i class="bi bi-chevron-down freccia-modulo" aria-hidden="true"></i>
+            </h2>
+            <form action="#" method="post">
+              <div class="mb-3">
+                <label for="nome" class="form-label">Nome e cognome</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+              </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Telefono</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono" required>
+              </div>
+              <div class="mb-3">
+                <label for="da-chi" class="form-label">Da chi stai comprando?</label>
+                <select class="form-select" id="da-chi" name="da_chi">
+                  <option value="privato">Da un privato</option>
+                  <option value="agenzia">Tramite agenzia</option>
+                  <option value="non-so">Non lo so ancora</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="casa" class="form-label">Due righe sulla casa che stai valutando</label>
+                <textarea class="form-control" id="casa" name="casa" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-brand w-100">Invia la richiesta</button>
+              <p class="form-text mt-2 mb-0">La prima chiamata è conoscitiva e senza impegno.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     PERCHÉ SERVE UN CONSULENTE
+     ============================================================ -->
+<section id="perche" class="py-5">
+  <div class="container">
+    <div class="row g-5">
+
+      <div class="col-lg-7">
+        <h2 class="titolo-sezione">Chi vende ha già il suo esperto</h2>
+        <p>
+          La consulenza tecnica all'acquisto ti fa scoprire in anticipo tutto ciò che incide sul valore
+          reale di un immobile, e ti dà un vantaggio concreto nella trattativa.
+        </p>
+        <p>
+          Soprattutto, ti evita le sorprese di spesa: quei costi nascosti che saltano fuori solo dopo il
+          rogito. Io ti dico prima, e senza giri di parole, di cosa ha davvero bisogno la casa che stai
+          per comprare.
+        </p>
+        <p>
+          Ristrutturo case da più di 20 anni: impianti, umidità, muri, infissi. I lavori che servono alla
+          tua nuova casa li ho già fatti decine di volte, quindi non li stimo a occhio — so quanto costano.
+        </p>
+        <a href="#contatti" class="btn btn-brand">Prenota una chiamata</a>
+      </div>
+
+      <div class="col-lg-5">
+        <!-- Schemino "chi lavora per chi" -->
+        <ul class="elenco-parti list-unstyled">
+          <li>
+            <span class="chi">L'agenzia</span>
+            <span class="per-chi">lavora per chi vende</span>
+          </li>
+          <li>
+            <span class="chi">Il notaio</span>
+            <span class="per-chi">certifica l'atto</span>
+          </li>
+          <li class="in-evidenza">
+            <span class="chi">Il tuo consulente</span>
+            <span class="per-chi">lavora per te</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DA CHI STAI COMPRANDO
+     ============================================================ -->
+<section id="situazioni" class="py-5 sezione-alternata">
+  <div class="container">
+    <p class="occhiello">Due punti di partenza</p>
+    <h2 class="titolo-sezione mb-4">Da chi stai comprando?</h2>
+    <div class="row g-4">
+
+      <div class="col-md-6">
+        <div class="card h-100 scheda">
+          <div class="card-body">
+            <h3 class="h4">Compri da un privato</h3>
+            <p class="mb-0">
+              Risparmi le commissioni d'agenzia, ma porti avanti la trattativa da solo. Senza le giuste
+              competenze tecniche il rischio di valutare male la casa — e di pagarla troppo — è alto.
+              Al sopralluogo ci vengo io, e ci penso io a darti i numeri reali.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card h-100 scheda">
+          <div class="card-body">
+            <h3 class="h4">Compri tramite agenzia</h3>
+            <p class="mb-0">
+              Il timore più comune è che l'agenzia faccia soprattutto l'interesse di chi vende e che,
+              incassata la commissione, non abbia più motivo di seguirti. Un consulente che sta solo dalla
+              tua parte tutela le tue esigenze e il tuo investimento.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     I SERVIZI
+     ============================================================ -->
+<section id="servizi" class="py-5">
+  <div class="container">
+    <p class="occhiello">Cosa faccio per te</p>
+    <h2 class="titolo-sezione mb-4">I servizi</h2>
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card h-100 scheda">
+          <div class="card-body">
+            <i class="bi bi-calculator icona-servizio"></i>
+            <h3 class="h5">Preventivo dei lavori</h3>
+            <p class="mb-0">I numeri chiari per adeguare la casa alle tue esigenze, prima dell'acquisto.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 scheda">
+          <div class="card-body">
+            <i class="bi bi-rulers icona-servizio"></i>
+            <h3 class="h5">Architetto e arredatore</h3>
+            <p class="mb-0">Un gruppo di lavoro integrato, fino alla scelta del mobilio.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 scheda">
+          <div class="card-body">
+            <i class="bi bi-box-seam icona-servizio"></i>
+            <h3 class="h5">Acquisto dei materiali</h3>
+            <p class="mb-0">Assistenza per comprare i materiali della ristrutturazione alle giuste condizioni.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="riga-prezzo mt-4 mb-0">
+      Prima visita in casa e computo dei lavori: <strong>a partire da 150 € + IVA</strong>.
+      Te lo dico prima di venire, senza sorprese.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     COME FUNZIONA
+     ============================================================ -->
+<section id="come-funziona" class="py-5 sezione-scura">
+  <div class="container">
+    <p class="occhiello">Dal primo sopralluogo alla firma</p>
+    <h2 class="titolo-sezione mb-4">Come funziona</h2>
+    <div class="row g-4">
+
+      <div class="col-lg-3 col-md-6">
+        <div class="passo h-100">
+          <span class="numero">1</span>
+          <h3 class="h5">Sopralluogo insieme</h3>
+          <p class="mb-0">Ti accompagno a vedere la casa con l'occhio di chi le ristruttura tutti i giorni,
+            e ti do una valutazione precisa del suo stato reale.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="passo h-100">
+          <span class="numero">2</span>
+          <h3 class="h5">Supporto alla trattativa</h3>
+          <p class="mb-0">Ti do tutte le informazioni per presentare una proposta equilibrata
+            e ben argomentata.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="passo h-100">
+          <span class="numero">3</span>
+          <h3 class="h5">Accesso agli atti</h3>
+          <p class="mb-0">Un geometra abilitato recupera in Comune e al Catasto la documentazione
+            depositata sull'immobile: planimetrie, pratiche edilizie, visure.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="passo h-100">
+          <span class="numero">4</span>
+          <h3 class="h5">Verifica di conformità</h3>
+          <p class="mb-0">Confrontiamo quello che risulta depositato con lo stato reale della casa. Così sai
+            prima di firmare se l'immobile è conforme — e, se non lo è, cosa serve per sistemarlo.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DICONO DI ME — disattivata finché non arrivano le testimonianze.
+     Per accendere la sezione: togliere questo commento.
+     ============================================================
+<section id="testimonianze" class="py-5 sezione-alternata">
+  <div class="container">
+    <p class="occhiello">Chi mi ha già scelto</p>
+    <h2 class="titolo-sezione mb-4">Dicono di me</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <blockquote class="card h-100 scheda p-4 mb-0">
+          <p>[Testimonianza — due righe, con parole sue]</p>
+          <footer class="blockquote-footer mb-0">[Nome cliente], <cite>[Zona]</cite></footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+     ============================================================ -->
+
+<!-- ============================================================
+     CHIUSURA
+     ============================================================ -->
+<section id="contatti" class="py-5 sezione-chiusura">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-8">
+        <h2 class="titolo-sezione">Stai per comprare casa?</h2>
+        <p class="lead mb-0">Raccontami la casa che stai valutando.
+          La prima chiamata è conoscitiva e senza impegno.</p>
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <a href="tel:+393937588998" class="btn btn-brand btn-lg">
+          <i class="bi bi-telephone me-2"></i>Chiama ora — 393 758 8998
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PIÈ DI PAGINA
+     ============================================================ -->
+<footer class="py-5 pie-pagina">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <p class="marchio mb-2">Nuova 2B</p>
+        <p class="mb-1">Ariccia (RM) — Castelli Romani, Roma e provincia</p>
+        <p class="mb-1"><a href="tel:+393937588998">393 758 8998</a></p>
+        <p class="mb-0"><a href="mailto:nuova.2bcostruzioni@gmail.com">nuova.2bcostruzioni@gmail.com</a></p>
+      </div>
+
+      <div class="col-md-4">
+        <p class="titolo-colonna">La pagina</p>
+        <ul class="list-unstyled mb-0">
+          <li><a href="#perche">Perché serve un consulente</a></li>
+          <li><a href="#situazioni">Da chi stai comprando</a></li>
+          <li><a href="#servizi">I servizi</a></li>
+          <li><a href="#come-funziona">Come funziona</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <p class="titolo-colonna">Scrivimi</p>
+        <p>Lasciami la tua email: ti richiamo io e ne parliamo senza impegno.</p>
+        <form action="#" method="post" class="d-flex gap-2">
+          <input type="email" class="form-control" placeholder="La tua email" aria-label="La tua email">
+          <button class="btn btn-brand" type="submit">Invia</button>
+        </form>
+      </div>
+
+    </div>
+
+    <hr class="my-4">
+    <p class="small mb-0">Nuova 2B — P. IVA 15567151004</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Box "Prenota una chiamata": su mobile si apre al tocco -->
+<script>
+(function () {
+  var box = document.getElementById('box-modulo');
+  if (!box) return;
+  var testa = box.querySelector('.intestazione-modulo');
+
+  function apriChiudi() {
+    var socchiuso = box.classList.toggle('socchiuso');
+    testa.setAttribute('aria-expanded', socchiuso ? 'false' : 'true');
+  }
+
+  testa.addEventListener('click', apriChiudi);
+  testa.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); apriChiudi(); }
+  });
+
+  // se l'utente tocca la parte socchiusa del modulo, lo apre invece di scriverci dentro
+  box.addEventListener('click', function (e) {
+    if (box.classList.contains('socchiuso') && e.target !== testa) { apriChiudi(); }
+  }, true);
+})();
+</script>
+</body>
+</html>
