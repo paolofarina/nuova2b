@@ -13,6 +13,9 @@
   --accento:      #C9821E;  /* colore di richiamo — numeri, evidenziazioni */
   --grigio-logo:  #8B8B8C;  /* il grigio del triangolo, se serve */
 
+  --whatsapp:       #25D366;  /* verde ufficiale WhatsApp */
+  --whatsapp-scuro: #1DA851;
+
   /* Neutri: di solito non si toccano */
   --testo:        #23272B;
   --testo-tenue:  #6B7278;
@@ -137,58 +140,54 @@ a:hover { color: var(--brand-scuro); }
   font-size: .95rem;
 }
 
-.modulo-contatto {
+.riquadro-whatsapp {
   border: 1px solid var(--bordo);
-  border-top: 4px solid var(--accento);
+  border-top: 4px solid var(--whatsapp);
   box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.06);
 }
-.modulo-contatto h2 { color: var(--brand); }
+.riquadro-whatsapp h2 { color: var(--brand); }
 
-.intestazione-modulo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-/* la freccia serve solo dove il box si apre e si chiude */
-.freccia-modulo { display: none; }
-
-/* --- da tablet in giù: il box parte socchiuso --- */
-@media (max-width: 991.98px) {
-  .modulo-contatto { position: relative; cursor: pointer; }
-
-  .modulo-contatto .card-body {
-    overflow: hidden;
-    max-height: 60rem;                     /* aperto */
-    transition: max-height .45s ease;
-  }
-  .modulo-contatto.socchiuso .card-body {
-    max-height: 8.6rem;                    /* si intravede il titolo e mezzo campo */
-  }
-
-  /* sfumatura che dice "c'è dell'altro sotto" */
-  .modulo-contatto.socchiuso::after {
-    content: "";
-    position: absolute;
-    left: 1px; right: 1px; bottom: 1px;
-    height: 3.5rem;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 85%);
-    pointer-events: none;
-    border-radius: 0 0 .35rem .35rem;
-  }
-
-  .freccia-modulo {
-    display: inline-block;
-    font-size: 1.1rem;
-    color: var(--accento);
-    transition: transform .35s ease;
-  }
-  .modulo-contatto:not(.socchiuso) .freccia-modulo { transform: rotate(180deg); }
+.icona-whatsapp {
+  display: block;
+  font-size: 2.6rem;
+  color: var(--whatsapp);
+  margin-bottom: .5rem;
 }
 
-/* da desktop in su resta sempre aperto, qualunque classe abbia */
-@media (min-width: 992px) {
-  .modulo-contatto .card-body { max-height: none; }
+.btn-whatsapp {
+  background: var(--whatsapp);
+  border: 1px solid var(--whatsapp);
+  color: #fff;
+  font-weight: 600;
+}
+.btn-whatsapp:hover,
+.btn-whatsapp:focus {
+  background: var(--whatsapp-scuro);
+  border-color: var(--whatsapp-scuro);
+  color: #fff;
+}
+
+.btn-outline-brand {
+  background: transparent;
+  border: 1px solid var(--brand);
+  color: var(--brand);
+}
+.btn-outline-brand:hover,
+.btn-outline-brand:focus {
+  background: var(--brand);
+  color: #fff;
+}
+
+.riquadro-whatsapp .oppure {
+  margin: .9rem 0 .6rem;
+  color: var(--testo-tenue);
+  font-size: .9rem;
+}
+
+.riquadro-whatsapp .nota-riquadro {
+  margin-top: 1rem;
+  font-size: .85rem;
+  color: var(--testo-tenue);
 }
 
 /* ---------- immagine principale ---------- */

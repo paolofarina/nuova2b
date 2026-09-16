@@ -96,39 +96,29 @@
       </div>
 
       <div class="col-lg-5">
-        <!-- MODULO: oggi non invia nulla. Va collegato a Formspree o allo script dell'hosting. -->
-        <!-- Su mobile il box parte socchiuso: si tocca e si apre. Su desktop è sempre aperto. -->
-        <div class="card modulo-contatto socchiuso" id="box-modulo">
-          <div class="card-body">
-            <h2 class="h4 mb-3 intestazione-modulo" role="button" tabindex="0"
-                aria-controls="box-modulo" aria-expanded="false">
-              Prenota una chiamata
-              <i class="bi bi-chevron-down freccia-modulo" aria-hidden="true"></i>
-            </h2>
-            <form action="#" method="post">
-              <div class="mb-3">
-                <label for="nome" class="form-label">Nome e cognome</label>
-                <input type="text" class="form-control" id="nome" name="nome" required>
-              </div>
-              <div class="mb-3">
-                <label for="telefono" class="form-label">Telefono</label>
-                <input type="tel" class="form-control" id="telefono" name="telefono" required>
-              </div>
-              <div class="mb-3">
-                <label for="da-chi" class="form-label">Da chi stai comprando?</label>
-                <select class="form-select" id="da-chi" name="da_chi">
-                  <option value="privato">Da un privato</option>
-                  <option value="agenzia">Tramite agenzia</option>
-                  <option value="non-so">Non lo so ancora</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="casa" class="form-label">Due righe sulla casa che stai valutando</label>
-                <textarea class="form-control" id="casa" name="casa" rows="3"></textarea>
-              </div>
-              <button type="submit" class="btn btn-brand w-100">Invia la richiesta</button>
-              <p class="form-text mt-2 mb-0">La prima chiamata è conoscitiva e senza impegno.</p>
-            </form>
+        <!-- Niente modulo: si scrive direttamente su WhatsApp. -->
+        <div class="card riquadro-whatsapp">
+          <div class="card-body text-center">
+            <i class="bi bi-whatsapp icona-whatsapp" aria-hidden="true"></i>
+            <h2 class="h4 mb-2">Parliamone su WhatsApp</h2>
+            <p class="mb-4">Scrivimi due righe sulla casa che stai valutando.
+              Ti rispondo io, e la prima chiacchierata è senza impegno.</p>
+
+            <a class="btn btn-whatsapp btn-lg w-100"
+               href="https://wa.me/393937588998?text=Contatto%20da%20sito.%20Buongiorno%2C%20vorrei%20essere%20ricontattato."
+               target="_blank" rel="noopener">
+              <i class="bi bi-whatsapp me-2" aria-hidden="true"></i>Apri la chat
+            </a>
+
+            <p class="oppure mb-2">oppure</p>
+
+            <a class="btn btn-outline-brand w-100" href="tel:+393937588998">
+              <i class="bi bi-telephone me-2" aria-hidden="true"></i>Chiama il 393 758 8998
+            </a>
+
+            <p class="nota-riquadro mb-0">
+              Rispondo io, di solito in giornata.
+            </p>
           </div>
         </div>
       </div>
@@ -352,8 +342,12 @@
           La prima chiamata è conoscitiva e senza impegno.</p>
       </div>
       <div class="col-lg-4 text-lg-end">
-        <a href="tel:+393937588998" class="btn btn-brand btn-lg">
-          <i class="bi bi-telephone me-2"></i>Chiama ora — 393 758 8998
+        <a href="https://wa.me/393937588998?text=Contatto%20da%20sito.%20Buongiorno%2C%20vorrei%20essere%20ricontattato."
+           target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg mb-2">
+          <i class="bi bi-whatsapp me-2" aria-hidden="true"></i>Scrivimi su WhatsApp
+        </a>
+        <a href="tel:+393937588998" class="btn btn-outline-brand btn-lg">
+          <i class="bi bi-telephone me-2" aria-hidden="true"></i>393 758 8998
         </a>
       </div>
     </div>
@@ -387,11 +381,12 @@
 
       <div class="col-md-4">
         <p class="titolo-colonna">Scrivimi</p>
-        <p>Lasciami la tua email: ti richiamo io e ne parliamo senza impegno.</p>
-        <form action="#" method="post" class="d-flex gap-2">
-          <input type="email" class="form-control" placeholder="La tua email" aria-label="La tua email">
-          <button class="btn btn-brand" type="submit">Invia</button>
-        </form>
+        <p>Due righe su WhatsApp e ne parliamo.</p>
+        <a class="btn btn-whatsapp"
+           href="https://wa.me/393937588998?text=Contatto%20da%20sito.%20Buongiorno%2C%20vorrei%20essere%20ricontattato."
+           target="_blank" rel="noopener">
+          <i class="bi bi-whatsapp me-2" aria-hidden="true"></i>Apri la chat
+        </a>
       </div>
 
     </div>
@@ -402,29 +397,5 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Box "Prenota una chiamata": su mobile si apre al tocco -->
-<script>
-(function () {
-  var box = document.getElementById('box-modulo');
-  if (!box) return;
-  var testa = box.querySelector('.intestazione-modulo');
-
-  function apriChiudi() {
-    var socchiuso = box.classList.toggle('socchiuso');
-    testa.setAttribute('aria-expanded', socchiuso ? 'false' : 'true');
-  }
-
-  testa.addEventListener('click', apriChiudi);
-  testa.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); apriChiudi(); }
-  });
-
-  // se l'utente tocca la parte socchiusa del modulo, lo apre invece di scriverci dentro
-  box.addEventListener('click', function (e) {
-    if (box.classList.contains('socchiuso') && e.target !== testa) { apriChiudi(); }
-  }, true);
-})();
-</script>
 </body>
 </html>
